@@ -14,6 +14,8 @@ export interface FxCompany {
   cons: string[]
   recommended: string
   affiliateUrl: string
+  affiliateBannerUrl?: string
+  affiliateTrackingPixelUrl?: string
   color: string
 }
 
@@ -93,7 +95,9 @@ export const fxCompanies: FxCompany[] = [
       'スワップポイントは低め',
     ],
     recommended: '初心者・スプレッドの安定性重視の方',
-    affiliateUrl: 'https://fx.dmm.com/support/openingflow/',
+    affiliateUrl: 'https://px.a8.net/svt/ejp?a8mat=4AXL45+FK8X0Y+1WP2+6DZBL',
+    affiliateBannerUrl: 'https://www24.a8.net/svt/bgt?aid=260227877941&wid=001&eno=01&mid=s00000008903001073000&mc=1',
+    affiliateTrackingPixelUrl: 'https://www15.a8.net/0.gif?a8mat=4AXL45+FK8X0Y+1WP2+6DZBL',
     color: '#FF6600',
   },
   {

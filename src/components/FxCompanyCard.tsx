@@ -10,7 +10,7 @@ export function FxCompanyCard({ company, rank }: { company: FxCompany; rank: num
   const swap = SWAP_LABEL[company.swapLevel]
 
   return (
-    <div className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+    <div className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden relative">
       <div className="h-1.5" style={{ backgroundColor: company.color }} />
       <div className="p-6">
         <div className="flex items-start justify-between mb-4">
@@ -54,14 +54,43 @@ export function FxCompanyCard({ company, rank }: { company: FxCompany; rank: num
           <p className="text-sm text-gray-700 font-medium">{company.recommended}</p>
         </div>
 
+        {company.affiliateBannerUrl && (
+          <a
+            href={company.affiliateUrl}
+            target="_blank"
+            rel="nofollow noopener sponsored"
+            className="block mb-3 text-center"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={company.affiliateBannerUrl}
+              alt={`${company.name} 口座開設`}
+              width={120}
+              height={90}
+              className="mx-auto rounded"
+            />
+          </a>
+        )}
+
         <a
           href={company.affiliateUrl}
           target="_blank"
-          rel="noopener noreferrer sponsored"
+          rel="nofollow noopener sponsored"
           className="block w-full text-center bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 rounded-lg transition-colors text-sm"
         >
           無料口座開設はこちら →
         </a>
+
+        {company.affiliateTrackingPixelUrl && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={company.affiliateTrackingPixelUrl}
+            alt=""
+            width={1}
+            height={1}
+            className="absolute bottom-0 right-0"
+          />
+        )}
       </div>
     </div>
   )
