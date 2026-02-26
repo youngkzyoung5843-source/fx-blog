@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import { getAllPosts } from '@/data/blog'
+import Link from 'next/link'
+import { getAllPosts, CATEGORIES } from '@/data/blog'
 import { BlogCard } from '@/components/BlogCard'
 
 export const metadata: Metadata = {
@@ -7,10 +8,14 @@ export const metadata: Metadata = {
   description: 'FX投資に関する基礎知識・戦略・会社比較など、役立つ記事を掲載しています。',
 }
 
-const CATEGORIES = ['すべて', '初心者向け', 'FX会社比較', 'テクニカル分析', 'リスク管理', '投資戦略']
+interface Props {
+  searchParams: Promise<{ category?: string }>
+}
 
-export default function BlogListPage() {
-  const posts = getAllPosts()
+export default async function BlogListPage({ searchParams }: Props) {
+  const { category } = await searchParams
+  const allPosts = getAllPosts()
+  const posts = category ? allPosts.filter(p => p.category === category) : allPosts
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
@@ -22,25 +27,40 @@ export default function BlogListPage() {
 
       {/* Category tabs */}
       <div className="flex gap-2 flex-wrap mb-8">
+        <Link
+          href="/blog"
+          className={`text-sm px-4 py-1.5 rounded-full border transition-colors ${
+            !category
+              ? 'bg-blue-700 text-white border-blue-700'
+              : 'border-gray-200 text-gray-600 hover:border-blue-400 hover:text-blue-700'
+          }`}
+        >
+          すべて
+        </Link>
         {CATEGORIES.map(cat => (
-          <span
+          <Link
             key={cat}
-            className={`text-sm px-4 py-1.5 rounded-full border cursor-pointer transition-colors ${
-              cat === 'すべて'
+            href={`/blog?category=${encodeURIComponent(cat)}`}
+            className={`text-sm px-4 py-1.5 rounded-full border transition-colors ${
+              category === cat
                 ? 'bg-blue-700 text-white border-blue-700'
                 : 'border-gray-200 text-gray-600 hover:border-blue-400 hover:text-blue-700'
             }`}
           >
             {cat}
-          </span>
+          </Link>
         ))}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {posts.map(post => (
-          <BlogCard key={post.slug} post={post} />
-        ))}
-      </div>
+      {posts.length === 0 ? (
+        <p className="text-gray-500 text-center py-16">記事が見つかりませんでした。</p>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {posts.map(post => (
+            <BlogCard key={post.slug} post={post} />
+          ))}
+        </div>
+      )}
     </div>
   )
 }
