@@ -41,7 +41,7 @@ export const fxCompanies: FxCompany[] = [
       'スワップポイントは他社と比べて平均的',
     ],
     recommended: 'スキャルピング・デイトレード向け',
-    affiliateUrl: 'https://www.click-sec.com/corp/guide/fx/account/',
+    affiliateUrl: 'https://www.click-sec.com/corp/kouza/entry/',
     color: '#0066CC',
   },
   {
@@ -67,7 +67,7 @@ export const fxCompanies: FxCompany[] = [
       'スキャルピング制限がある場合がある',
     ],
     recommended: '初心者・少額投資家向け',
-    affiliateUrl: 'https://www.sbifxt.co.jp/account/open.html',
+    affiliateUrl: 'https://www.sbifxt.co.jp/account/',
     color: '#E50000',
   },
   {
@@ -93,7 +93,7 @@ export const fxCompanies: FxCompany[] = [
       'スワップポイントは低め',
     ],
     recommended: '初心者・スプレッドの安定性重視の方',
-    affiliateUrl: 'https://fx.dmm.com/apply/',
+    affiliateUrl: 'https://fx.dmm.com/support/openingflow/',
     color: '#FF6600',
   },
   {
@@ -119,7 +119,7 @@ export const fxCompanies: FxCompany[] = [
       '初心者には情報量が多すぎる場合も',
     ],
     recommended: 'スワップ投資・長期保有向け',
-    affiliateUrl: 'https://www.hirose-fx.co.jp/open/',
+    affiliateUrl: 'https://register.hirose-fx.co.jp/register/personal',
     color: '#8B0000',
   },
   {
@@ -145,7 +145,7 @@ export const fxCompanies: FxCompany[] = [
       '取り扱い通貨ペアは他社より少なめ',
     ],
     recommended: 'スワップ＋デイトレードのハイブリッド向け',
-    affiliateUrl: 'https://min-fx.jp/account/open/',
+    affiliateUrl: 'https://min-fx.jp/',
     color: '#00AA44',
   },
 ]
