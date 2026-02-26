@@ -56,6 +56,8 @@ export function FxCompanyCard({ company, rank }: { company: FxCompany; rank: num
 
         <a
           href={company.affiliateUrl}
+          target="_blank"
+          rel="noopener noreferrer sponsored"
           className="block w-full text-center bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 rounded-lg transition-colors text-sm"
         >
           無料口座開設はこちら →
