@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getPostBySlug, getAllPosts } from '@/data/blog'
+import { RakutenWidget } from '@/components/RakutenWidget'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -116,6 +117,7 @@ export default async function BlogDetailPage({ params }: Props) {
               ))}
             </div>
           </div>
+          <RakutenWidget />
         </aside>
       </div>
     </div>
