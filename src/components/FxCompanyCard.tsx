@@ -65,8 +65,8 @@ export function FxCompanyCard({ company, rank }: { company: FxCompany; rank: num
             <img
               src={company.affiliateBannerUrl}
               alt={`${company.name} 口座開設`}
-              width={120}
-              height={90}
+              width={company.affiliateBannerWidth ?? 120}
+              height={company.affiliateBannerHeight ?? 90}
               className="mx-auto rounded"
             />
           </a>

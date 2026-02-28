@@ -15,6 +15,8 @@ export interface FxCompany {
   recommended: string
   affiliateUrl: string
   affiliateBannerUrl?: string
+  affiliateBannerWidth?: number
+  affiliateBannerHeight?: number
   affiliateTrackingPixelUrl?: string
   color: string
 }
@@ -47,30 +49,34 @@ export const fxCompanies: FxCompany[] = [
     color: '#0066CC',
   },
   {
-    id: 'sbi-fx',
-    name: 'SBI FXトレード',
-    logo: 'SBI',
-    tagline: '1通貨から取引可能！少額投資の定番',
-    dollarYenSpread: '0.18銭',
-    euroYenSpread: '0.5銭',
+    id: 'jfx',
+    name: 'JFX',
+    logo: 'JFX',
+    tagline: 'MATRIX TRADERで超高速約定。スキャルパー御用達',
+    dollarYenSpread: '0.2銭',
+    euroYenSpread: '0.4銭',
     maxLeverage: '25倍',
-    minUnit: '1通貨',
-    bonus: '新規口座開設キャンペーン実施中',
-    swapLevel: 'medium',
-    features: ['1通貨から取引可', 'スプレッド最狭水準', '初心者向けサポート', 'SBIグループの安心感'],
+    minUnit: '1,000通貨',
+    bonus: '口座開設キャンペーン実施中',
+    swapLevel: 'high',
+    features: ['超高速約定', 'MATRIX TRADER', '高スワップ', 'スキャルピング対応'],
     pros: [
-      'ドル円スプレッドが業界最狭水準（0.18銭）',
-      '1通貨（約150円）から取引可能で初心者に最適',
-      'SBIグループの信頼性と財務基盤',
-      '充実した投資情報・経済指標カレンダー',
+      '独自プラットフォーム「MATRIX TRADER」で超高速約定',
+      'スキャルピングを公式に認めている数少ないFX会社',
+      'スワップポイントが業界上位水準',
+      '注文約定率が非常に高くスリッページが少ない',
     ],
     cons: [
-      '高機能トレーディングツールは他社に劣る面も',
-      'スキャルピング制限がある場合がある',
+      '取り扱い通貨ペア数はやや少なめ',
+      'MATRIX TRADERに慣れるまで時間がかかる場合がある',
     ],
-    recommended: '初心者・少額投資家向け',
-    affiliateUrl: 'https://www.sbifxt.co.jp/account/',
-    color: '#E50000',
+    recommended: 'スキャルピング・高速取引向け',
+    affiliateUrl: 'https://px.a8.net/svt/ejp?a8mat=4AXL46+OESKY+25B2+614CX',
+    affiliateBannerUrl: 'https://www25.a8.net/svt/bgt?aid=260227878041&wid=001&eno=01&mid=s00000010019001013000&mc=1',
+    affiliateBannerWidth: 150,
+    affiliateBannerHeight: 150,
+    affiliateTrackingPixelUrl: 'https://www15.a8.net/0.gif?a8mat=4AXL46+OESKY+25B2+614CX',
+    color: '#1A3A6B',
   },
   {
     id: 'dmm-fx',
