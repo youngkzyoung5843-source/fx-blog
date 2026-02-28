@@ -4,4 +4,4 @@
 :HL["https://www13.a8.net/0.gif?a8mat=4AXL46+OESKY+25B2+601S1","image"]
 :HL["https://www24.a8.net/svt/bgt?aid=260227877941&wid=001&eno=01&mid=s00000008903001073000&mc=1","image"]
 :HL["https://www15.a8.net/0.gif?a8mat=4AXL45+FK8X0Y+1WP2+6DZBL","image"]
-0:{"buildId":"iZFLi6-h4TfBiB7VoPOxn","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"fx-companies","paramType":null,"paramKey":"fx-companies","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"CMDeUT9XcoMhjyWuhk5FE","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"fx-companies","paramType":null,"paramKey":"fx-companies","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
