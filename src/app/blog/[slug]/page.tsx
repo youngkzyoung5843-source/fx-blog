@@ -12,11 +12,32 @@ export async function generateStaticParams() {
   return getAllPosts().map(post => ({ slug: post.slug }))
 }
 
+const BASE_URL = 'https://youngkzyoung5843-source.github.io/fx-blog'
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const post = getPostBySlug(slug)
   if (!post) return {}
-  return { title: post.title, description: post.excerpt }
+  const url = `${BASE_URL}/blog/${slug}/`
+  return {
+    title: post.title,
+    description: post.excerpt,
+    openGraph: {
+      type: 'article',
+      url,
+      title: post.title,
+      description: post.excerpt,
+      publishedTime: post.date,
+      authors: ['kzy'],
+      tags: [post.category, 'FX', '投資'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+    },
+    alternates: { canonical: url },
+  }
 }
 
 export default async function BlogDetailPage({ params }: Props) {
@@ -28,8 +49,26 @@ export default async function BlogDetailPage({ params }: Props) {
     .filter(p => p.slug !== slug && p.category === post.category)
     .slice(0, 2)
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: { '@type': 'Person', name: 'kzy', url: 'https://x.com/kzyoungfx' },
+    publisher: { '@type': 'Organization', name: 'FXラボ', url: BASE_URL },
+    url: `${BASE_URL}/blog/${slug}/`,
+    inLanguage: 'ja',
+    articleSection: post.category,
+  }
+
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="flex gap-8 items-start">
         {/* Article */}
         <article className="flex-1 min-w-0">
